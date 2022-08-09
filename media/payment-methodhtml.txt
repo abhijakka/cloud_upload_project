@@ -1,0 +1,196 @@
+<div class="col-md-5 ">
+						<div class="section-title ">
+							<h3 class="title">Payment Gateway</h3>
+                            <br>
+                                
+                                <!-- <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active  " id="home-tab" data-toggle="" href="{% url 'debitcard' %}" role="tab" aria-controls="Debit Card" aria-selected="true">Debit Card</a>
+                                      </li>
+                                      <li class="nav-item ">
+                                        <a class="nav-link  " id="profile-tab" data-toggle="" href="{% url 'creditcard' %}" role="tab" aria-controls="Credit Card" aria-selected="false">Credit Card</a>
+                                      </li>
+                                      <li class="nav-item">
+                                          <a class="nav-link " id="profile-tab" data-toggle="" href="{% url 'netbanking' %}" role="tab" aria-controls="UPI" aria-selected="false">Net Banking</a>
+                                      </li>
+                                       
+                                     
+                                  </ul> -->
+                                 
+                                    <div class="tabs">
+                                    <input type="radio" name="tabs" id="tabone" checked="checked">
+                                    <label for="tabone">DebitCard</label>
+                                    <div class="tab">
+                                      <div class="container-fluid">
+                                        <div class="row justify-content-center">
+                                            
+                                            <div class="col-sm-12">
+                                                <div class="card  my-4 p-3  ">
+                                                    <div class="row main">
+                                                    <div class="col-12"><span></span>&nbsp;&nbsp;&nbsp;&nbsp;<span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<h3><span>&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbspDebit card <hr></span></h3></div>
+                                                    </div>
+                                                    
+                                                    <div class="row justify-content-center mrow" >
+                                                      
+                                                    <div class="inlineimage"> <img class="img-responsive images" src="https://cdn0.iconfinder.com/data/icons/credit-card-debit-card-payment-PNG/128/Mastercard-Curved.png"> <img  class="img-responsive images" src="{% static 'user/images/visa.png' %}" ><img class="img-responsive images" src="https://cdn0.iconfinder.com/data/icons/credit-card-debit-card-payment-PNG/128/Discover-Curved.png"> <img class="img-responsive images" src="https://cdn0.iconfinder.com/data/icons/credit-card-debit-card-payment-PNG/128/American-Express-Curved.png"> </div>
+                                                </div>
+                                                <div>
+                                                    <form class="form-card">
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <div class="form-group"> <input type="text" class="form-control p-0" id="number" required><h6 class="form-control-placeholder p-0" for="number">CardNumber</h6> </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <div class="form-group"> <input type="text" class="form-control p-0" id="name" required><h6 class="form-control-placeholder p-0" for="name">Cardholder'sName</h6> </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-sm-4 col-12">
+                                                                <div class="form-group"> <input type="text" class="form-control p-0" id="sdate" required><h6 class="form-control-placeholder p-0" for="sdate">StartDate</h6> </div>
+                                                            </div>
+                                                            <div class="col-sm-4 col-12">
+                                                                <div class="form-group"> <input type="text" class="form-control p-0" id="expdate" required><h6 class="form-control-placeholder p-0" for="expdate">Expiration</h6> </div>
+                                                            </div>
+                                                            <div class="col-sm-4 col-12">
+                                                                <div class="form-group"> <input type="password" class="form-control p-0" id="passw" required><h6 class="form-control-placeholder p-0" for="passw">CVV</h6> </div>
+                                                            </div>
+                                                            <div class="col-md-12">
+                                                                <div class="form-group"> <input type="numbers" class="form-control p-0" id="Price" required><h6 class="form-control-placeholder p-0" for="price">Amount</h6> </div>
+                                                            </div>
+                                                        </div>
+                                                       
+                                                        <div class="row mb-2">
+                                                            <div class="col-sm-12"> <button type="button" class="btn btn-primary btn-block">Donate</button> </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                        </div>
+                                     
+                                    </div>
+                                     <br>
+                                    <input type="radio" name="tabs" id="tabtwo">
+                                    <label for="tabtwo">Creditcard</label>
+                                    <div class="tab">
+                                      
+                                      <div class="container-fluid">
+                                        <div class="row justify-content-center">
+                                            
+                                            <div class="col-sm-12">
+                                                <div class="card  my-4 p-3  ">
+                                                    <div class="row main">
+                                                    <div class="col-12"><span></span>&nbsp;&nbsp;&nbsp;&nbsp;<span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<h3><span>&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbspCredit card <hr></span></h3></div>
+                                                    </div>
+                                                    
+                                                    <div class="row justify-content-center mrow" >
+                                                      
+                                                    <div class="inlineimage"> <img class="img-responsive images" src="https://cdn0.iconfinder.com/data/icons/credit-card-debit-card-payment-PNG/128/Mastercard-Curved.png"> <img  class="img-responsive images" src="{% static 'user/images/visa.png' %}" ><img class="img-responsive images" src="https://cdn0.iconfinder.com/data/icons/credit-card-debit-card-payment-PNG/128/Discover-Curved.png"> <img class="img-responsive images" src="https://cdn0.iconfinder.com/data/icons/credit-card-debit-card-payment-PNG/128/American-Express-Curved.png"> </div>
+                                                </div>
+                                                <div>
+                                                    <form class="form-card">
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <div class="form-group"> <input type="text" class="form-control p-0" id="number" required><h6 class="form-control-placeholder p-0" for="number">CardNumber</h6> </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <div class="form-group"> <input type="text" class="form-control p-0" id="name" required><h6 class="form-control-placeholder p-0" for="name">Cardholder'sName</h6> </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-sm-4 col-12">
+                                                                <div class="form-group"> <input type="text" class="form-control p-0" id="sdate" required><h6 class="form-control-placeholder p-0" for="sdate">StartDate</h6> </div>
+                                                            </div>
+                                                            <div class="col-sm-4 col-12">
+                                                                <div class="form-group"> <input type="text" class="form-control p-0" id="expdate" required><h6 class="form-control-placeholder p-0" for="expdate">Expiration</h6> </div>
+                                                            </div>
+                                                            <div class="col-sm-4 col-12">
+                                                                <div class="form-group"> <input type="password" class="form-control p-0" id="passw" required><h6 class="form-control-placeholder p-0" for="passw">CVV</h6> </div>
+                                                            </div>
+                                                            <div class="col-md-12">
+                                                                <div class="form-group"> <input type="numbers" class="form-control p-0" id="Price" required><h6 class="form-control-placeholder p-0" for="price">Amount</h6> </div>
+                                                            </div>
+                                                        </div>
+                                                       
+                                                        <div class="row mb-2">
+                                                            <div class="col-sm-12"> <button type="button" class="btn btn-primary btn-block">Donate</button> </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <input type="radio" name="tabs" id="tabthree">
+                                    <label for="tabthree">NetBanking</label>
+                                    <div class="tab">
+                                      <div class="container-fluid">
+                                        <div class="row justify-content-center">
+                                            
+                                            <div class="col-sm-12">
+                                                <div class="card  my-4 p-3  ">
+                                                    <div class="row main">
+                                                    <div class="col-12"><span></span>&nbsp;&nbsp;&nbsp;&nbsp;<span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<h3><span>&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbspNetbanking <hr></span></h3></div>
+                                                    </div>
+                                                    
+                                                    <div class="row justify-content-center mrow">
+                                                      
+                                                    
+                                                </div>
+                                                    <form class="form-card">
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <div class="form-group "> <h5 for="Select Your Bank">
+                                                                    <h6>Select your Bank</h6>
+                                                                </h5> <select class="form-control" id="ccmonth">
+                                                                    <option value="" selected disabled>--Please select your Bank--</option>
+                                                                    <option>Union Bank</option>
+                                                                    <option>Sate Bank Of India</option>
+                                                                    <option>Indian Bank</option>
+                                                                    <option>Hdfc Bank</option>
+                                                                    <option>Icic Bank</option>
+                                                                    <option>Kotak Bank</option>
+                                                                    <option>Paytm Bank</option>
+                                                                    
+                                                                </select> </div>
+                                                            </div>
+                                                            
+                                                        </div>
+                                                     
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <div class="form-group"> <input type="text" class="form-control p-0" id="name" required><h6 class="form-control-placeholder p-0" for="name">User Name</h6> </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <div class="form-group"> <input type="text" class="form-control p-0" id="password" required><h6 class="form-control-placeholder p-0" for="name">Password</h6> </div>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                       
+                                                        <div class="row mb-2">
+                                                            <div class="col-sm-12"> <button type="button" class="btn btn-primary btn-block">Donate</button> </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                    
+                                    </div>
+                                  </div>
+                                  
+                            </>
+					<!-- /Order Details -->
+				</div>

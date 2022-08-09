@@ -1,0 +1,124 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Key-Verification</title>
+    <link rel="shortcut icon" href="{% static 'cloud/images/favicon.png' %}" />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      
+    />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'user/css/otp.css' %}" />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script type="text/javascript">
+      function DownloadFile(fileName) {
+          //Set the File URL.
+          var url = fileName;
+          var res = fileName.slice(7,)
+
+          //Create XMLHTTP Request.
+          var req = new XMLHttpRequest();
+          req.open("GET", url, true);
+          req.responseType = "blob";
+          req.onload = function () {
+              //Convert the Byte Data to BLOB object.
+              var blob = new Blob([req.response], { type: "application/octetstream" });
+
+              //Check the Browser type and download the File.
+              var isIE = false || !!document.documentMode;
+              if (isIE) {
+                  window.navigator.msSaveBlob(blob, fileName);
+              } else {
+                  var url = window.URL || window.webkitURL;
+                  link = url.createObjectURL(blob);
+                  var a = document.createElement("a");
+                  a.setAttribute("download", res);
+                  a.setAttribute("href", link);
+                  document.body.appendChild(a);
+                  a.click();
+                  document.body.removeChild(a);
+              }
+          };
+          req.send();
+      };
+  </script>
+  </head>
+ 
+  <body>
+    <div class="d-flex justify-content-center align-items-center continer" style="margin: 150px;">
+      <div class="card py-5 px-3">
+          {% if d == True%}
+          <h5 class="m-0" style="color:green" >Success!!</h5>
+          <span class="mobile-text"
+            ><b>Here is the link to download the file</b>
+          {% else %}
+          <h5 class="m-0">Security Key verification</h5>
+          <span class="mobile-text"
+          ><b>Enter the security key.</b>
+          {% endif %}
+          {% comment %} <b class="text-color">+91 09899619282</b> {% endcomment %}
+        </span>
+        <form action="" method="post">
+          {% csrf_token %}
+                {% if messages %}              
+                {% for message in messages %}
+                {% if message.level == DEFAULT_MESSAGE_LEVELS.WARNING %}
+                    <script>swal({
+                    title: "Error!",
+                    text: "{{message}}",
+                    icon: "warning",
+                    button: "OK",
+                    });
+                    </script>
+                        
+                    {% elif message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
+                    <script>swal({
+                    title: "Success :)",
+                    text: "{{message}}",
+                    icon: "success",
+                    button: "OK",
+                    });
+                    </script>
+                    {% endif %}              
+                {% endfor %} 
+                {% endif %}
+       
+        <div class="d-flex flex-row mt-5">
+         
+          {% if d == True%}
+          <input type="text" class="form-control" hidden name="security"/>
+          {% else %}
+          <input type="text"  class="form-control mb-3"  name="security"/>
+          {% endif %}
+
+        </div>
+        <div class="text-center">
+         
+          {% if d == True%}
+          <button type="submit" class="btn btn-outline-primary" name="button-download"  onclick="DownloadFile('/media/{{data.upload_file}}')" >Download</button>
+          <div style="display:flex;justify-content:start">
+            <a  style="color:#415273;font-family:Roboto;margin-top:12px;font-size:15px"  href="{% url 'user_dashboard' %}" class="nav-item nav-link"><i class="fa fa-angle-left text-black f-16" style="margin:8px"></i>Back To Home</a>
+          </div>
+          {% else %}
+          <span class="d-block mobile-text" id="countdown"></span>
+          <span class="d-block mobile-text" id="resend"></span>
+          <button class="btn btn-primary mt-3" name="button-check" type="submit">Check Security key</button>
+          <div style="display:flex;justify-content:start">
+            <a  style="color:#415273;font-family:Roboto;margin-top:12px;font-size:15px"  href="{% url 'user_dashboard' %}" class="nav-item nav-link"><i class="fa fa-angle-left text-black f-16" style="margin:8px"></i>Back To Home</a>
+          </div>
+          {% endif %}
+
+        </div>
+        </form>
+      </div>
+    </div>
+    <script src="{% static 'user/js/otp.js' %}"></script>
+  </body>
+</html>

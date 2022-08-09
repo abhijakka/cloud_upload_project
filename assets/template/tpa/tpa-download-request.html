@@ -1,0 +1,270 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>TPA</title>
+   <!-- plugins:css -->
+  <link rel="stylesheet" href="{% static 'cloud/vendors/feather/feather.css' %}">
+  <link rel="stylesheet" href="{% static 'cloud/vendors/ti-icons/css/themify-icons.css' %}">
+  <link rel="stylesheet" href="{% static 'cloud/vendors/css/vendor.bundle.base.css' %}">
+  <!-- endinject -->
+  <!-- Plugin css for this page -->
+  <link rel="stylesheet" href="{% static 'cloud/vendors/mdi/css/materialdesignicons.min.css' %}">
+  <!-- inject:css -->
+  <link rel="stylesheet" href="{% static 'cloud/css/vertical-layout-light/style.css' %}">
+  <!-- endinject -->
+  <link rel="shortcut icon" href="{% static 'cloud/images/favicon.png' %}" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+
+<body>
+  <div class=" container-scroller">
+    <!-- partial:partials/_navbar.html -->
+   <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+    <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+      <a class="navbar-brand brand-logo mr-5" href="{% url 'tpa_dashboard' %}"><img src="{% static 'cloud/images/logo3.png' %}" class="mr-2" alt="logo"/></a>
+      <a class="navbar-brand brand-logo-mini" href="{% url 'tpa_dashboard' %}"><img src="{% static 'cloud/images/logo3.png' %}" alt="logo"/></a>    
+    </div>
+       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+        <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+          <span class="icon-menu"></span>
+        </button>
+        <ul class="navbar-nav mr-lg-2">
+          <li class="nav-item nav-search d-none d-lg-block">
+            <div class="input-group">
+              <div class="input-group-prepend hover-cursor" id="navbar-search-icon">
+                <span class="input-group-text" id="search">
+                  <i class="icon-search"></i>
+                </span>
+
+              </div>
+              <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+              <div class='d-flex'>
+              <input type="text" class="form-control" id="navbar-search-input" name="search" placeholder="Search now" aria-label="search" >
+              <button type="submit" name="btn2" class="btn-sm">submit</button>
+            </div>
+          </form>
+            </div>
+          </li>
+        </ul>
+        <ul class="navbar-nav navbar-nav-right">
+         
+          <li class="nav-item nav-profile dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
+              <img src="{% static 'cloud/images/faces/face28.jpg' %}" alt="profile"/>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+              
+              <a   href="{% url 'home' %}" class="dropdown-item">
+                <i class="ti-power-off text-primary"></i>
+                Logout
+              </a>
+            </div>
+          </li>
+         
+        </ul>
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+          <span class="icon-menu"></span>
+        </button>
+      </div>
+    </nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:partials/_settings-panel.html -->
+      <div class="theme-setting-wrapper">
+        <div id="settings-trigger"><i class="ti-settings"></i></div>
+        <div id="theme-settings" class="settings-panel">
+          <i class="settings-close ti-close"></i>
+          <p class="settings-heading">SIDEBAR SKINS</p>
+          <div class="sidebar-bg-options selected" id="sidebar-light-theme"><div class="img-ss rounded-circle bg-light border mr-3"></div>Light</div>
+          <div class="sidebar-bg-options" id="sidebar-dark-theme"><div class="img-ss rounded-circle bg-dark border mr-3"></div>Dark</div>
+          <p class="settings-heading mt-2">HEADER SKINS</p>
+          <div class="color-tiles mx-0 px-4">
+            <div class="tiles success"></div>
+            <div class="tiles warning"></div>
+            <div class="tiles danger"></div>
+            <div class="tiles info"></div>
+            <div class="tiles dark"></div>
+            <div class="tiles default"></div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- partial -->
+      <!-- partial:partials/_sidebar.html -->
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'tpa_dashboard' %}">
+              <i class="icon-grid menu-icon"></i>
+              <span class="menu-title">Dashboard</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link "  href="{% url 'tpa_user_details' %}" aria-expanded="false" aria-controls="ui-basic">
+              <i class="fa fa-th-list  menu-icon "></i>
+              <span class="menu-title " >T-RBT Details</span>
+              
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link "  href="{% url 'tpa_audit_challenge' %}" aria-expanded="false" aria-controls="ui-basic">
+              <i class="fa fa-users menu-icon "></i>
+              <span class="menu-title " >Audit Request</span>
+              
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link "  href="{% url 'user_download_request' %}" aria-expanded="false" aria-controls="ui-basic">
+                <i class="fa fa-pencil-square-o menu-icon "></i>
+                <span class="menu-title " >Download Request</span>
+              
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link "  href="{% url 'home' %}" aria-expanded="false" aria-controls="ui-basic">
+              <i class="fa fa-sign-out menu-icon "></i>
+              <span class="menu-title " >SignOut</span>
+              
+            </a>
+          </li>
+          
+         
+        </ul>
+    </nav>
+      <!-- partial -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="row">
+            <div class="col-md-12 grid-margin">
+              <div class="row">
+                <div class="col-12 col-xl-8 mb-4 mb-xl-0">
+                  <h3 class="font-weight-bold">User Details</h3>
+                  <h6 class="font-weight-normal mb-0"> <span class="text-primary"></span></h6>
+                
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+              <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-boarded">
+                      <thead style="background-color: aquamarine;">
+                        <tr>
+                          <th>
+                            User
+                          </th>
+                          <th>
+                            First name
+                          </th>
+                          <th>
+                            Email
+                          </th>
+                          <th>
+                            file name
+                          </th>
+                          <th>
+                            file Type
+                          </th>
+                          <th>
+                            Status
+                           </th>
+                           <th>
+                            Request
+                           </th>
+                          
+                        </tr>
+                      </thead>
+                      <tbody style="font-weight:bold; justify-content:space-around" >
+                        {% for i in data %}
+                        <tr>
+                          <td class="py-1">
+                            <img src="/media/{{i.user_creator.user_upload_image}}"  alt="image"/>
+                          </td>
+                          <td>
+                            {{i.user_creator.user_name}}
+                          </td>
+                          
+                          <td>
+                            {{i.user_creator.user_email}}
+                          </td>
+                          <td >
+                           {{i.file_name}}
+                          </td>
+                          <td >
+                            {{i.file_type}}
+                          </td>
+
+                          <td >
+                            {{i.user_download_status}}
+                          </td>
+                          <td>
+                            <div class="d-flex">
+                              {% if i.user_download_status != 'Accepted' %}
+                                <a href="/download_request_accept/{{i.file_id}}" type="submit" class="btn btn-primary" style="margin-right: 10px;" >Accept</a>
+                              {% else %}
+                              <a href="" type="submit" class="btn btn-primary" style="margin-right: 10px;" >Accept</a>
+                                {% endif %}
+                                <a href="/user_download_Rejected/{{i.file_id}}" type="submit" class="btn btn-danger" required >Reject</a>
+                
+                            </div>
+                          </td>
+                         
+                        </tr>
+                       {% endfor %}
+                        
+                        
+                      </tbody>
+                    </table>
+                  </div> 
+
+
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        <!-- content-wrapper ends -->
+        <!-- partial:partials/_footer.html -->
+        <footer class="footer">
+          <div class="d-sm-flex justify-content-center justify-content-sm-between">
+            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2021.  <a href="https://www.codebook.in/" target="_blank"></a>codebook. All rights reserved.</span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="ti-heart text-danger ml-1"></i></span>
+          </div>
+          <div class="d-sm-flex justify-content-center justify-content-sm-between">
+            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">created by <a href="https://www.codebook.in/" target="_blank">Codebook</a></span> 
+          </div>
+        </footer> 
+        <!-- partial -->
+      </div>
+    </div>
+
+  </div>
+   <!-- plugins:js -->
+  <script src="{% static 'cloud/vendors/js/vendor.bundle.base.js' %}"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page -->
+  <!-- End plugin js for this page -->
+  <!-- inject:js -->
+  <script src="{% static 'cloud/js/off-canvas.js' %}"></script>
+  <script src="{% static 'cloud/js/hoverable-collapse.js' %}"></script>
+  <script src="{% static 'cloud/js/template.js' %}"></script>
+  <script src="{% static 'cloud/js/settings.js"></script>
+  <script src="{% static 'cloud/js/todolist.js' %}"></script>
+  <!-- endinject -->
+  <!-- Custom js for this page-->
+  <!-- End custom js for this page-->
+</body>
+
+</html>
